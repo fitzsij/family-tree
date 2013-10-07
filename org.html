@@ -10,11 +10,13 @@
         data.addColumn('string', 'Manager');
         data.addColumn('string', 'ToolTip');
         data.addRows([
-          [{v:'Mike', f:'Mike<div style="color:red; font-style:italic">President</div>'}, '', 'The President'],
-          [{v:'Jim', f:'Jim<div style="color:red; font-style:italic">Vice President</div>'}, 'Mike', 'VP'],
-          ['Alice', 'Mike', ''],
-          ['Bob', 'Jim', 'Bob Sponge'],
-          ['Carol', 'Bob', '']
+          [{v:'at_eniq/master branch', f:'at_eniq/master branch<div style="color:red; font-style:italic">Main branch</div>'}, '', 'Main track'],
+          [{v:'4.0.4 EE, 14.0.9 ES, 4.4.4 SV', f:'Main branch<div style="color:red; font-style:italic">Main branch</div>'}, 'at_eniq/master branch', 'Main track'],
+          ['13B Consolidation branch EE ES SV', 'at_eniq/master branch', 'Consolidation track'],
+          ['14.1.6 ES, 4.0.5 EE, 4.0.5 SV', '4.0.4 EE, 14.0.9 ES, 4.4.4 SV', 'Main track'],
+          ['14.0.9 ES EC branch', '4.0.4 EE, 14.0.9 ES, 4.4.4 SV', 'Consolidation track'],
+          ['14A EE, ES, SV', '14.1.6 ES, 4.0.5 EE, 4.0.5 SV', 'Main track'],
+          ['14B Early Dev branch EE, ES, SV', '14.1.6 ES, 4.0.5 EE, 4.0.5 SV', 'Dev track']
         ]);
         var chart = new google.visualization.OrgChart(document.getElementById('chart_div'));
         chart.draw(data, {allowHtml:true});
@@ -23,6 +25,7 @@
   </head>
 
   <body>
+  <h1>Branching Strategy</h1>
     <div id='chart_div'></div>
   </body>
 </html>
